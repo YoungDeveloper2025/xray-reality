@@ -105,6 +105,13 @@
         "protocol": ["bittorrent"],
         "type": "field",
         "outboundTag": "blocked"
+      },
+      {
+        "type": "field",
+        "outboundTag": "IPv4",
+        "domain": [
+          "geosite:google"
+        ]
       }
     ]
   }

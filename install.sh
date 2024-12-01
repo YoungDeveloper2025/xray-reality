@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update package index and install dependencies
-sudo apt-get update
+
 sudo apt-get install -y jq openssl
 
 curl -s https://raw.githubusercontent.com/YoungDeveloper2025/xray-reality/master/default.json > config.json

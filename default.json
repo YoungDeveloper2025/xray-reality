@@ -1,7 +1,7 @@
 {
-    "name": "reality-80",
+    "name": "reality",
     "email":"sajjaddg",
-    "port": 80,
+    "port": 443,
     "sni": "sourceforge.net",
     "path": "%2F"
 }

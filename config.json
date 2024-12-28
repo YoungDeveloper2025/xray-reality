@@ -92,11 +92,6 @@
         "type": "field"
       },
       {
-        "domain": ["Samandehi.ir"],
-        "type": "field",
-        "outboundTag": "blocked"
-      },
-      {
         "type": "field",
         "ip": [
           "geoip:private",

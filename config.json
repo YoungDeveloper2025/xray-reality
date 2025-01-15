@@ -98,7 +98,7 @@
       },
       {
         "type": "field",
-        "ip": ["geoip:ir", "geoip:private"],
+        "ip": ["geoip:private"],
         "outboundTag": "blocked"
       },
       {

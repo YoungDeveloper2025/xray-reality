@@ -1,7 +1,7 @@
 {
     "name": "vless+tls+h2+reality",
     "email":"sajjaddg",
-    "port": 8000,
-    "sni": "www.openstreetmap.org",
+    "port": 443,
+    "sni": "sourceforge.net",
     "path": "%2F"
 }

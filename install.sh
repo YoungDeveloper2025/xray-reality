@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Update package index and install dependencies
-sudo apt-get update
-sudo apt-get install -y jq openssl qrencode
+#sudo apt-get update
+sudo apt-get install -y jq openssl
 
-curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/default.json > config.json
+curl -s https://raw.githubusercontent.com/YoungDeveloper2025/xray-reality/master/default.json > config.json
 
 # Extract the desired variables using jq
 name=$(jq -r '.name' config.json)
@@ -15,7 +15,7 @@ path=$(jq -r '.path' config.json)
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version v1.8.23
 
-json=$(curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/config.json)
+json=$(curl -s https://raw.githubusercontent.com/YoungDeveloper2025/xray-reality/master/config.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
@@ -43,10 +43,9 @@ newJson=$(echo "$json" | jq \
 
 echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 sudo systemctl restart xray
-
+echo ""
 echo "$url"
+echo ""
 
-qrencode -s 120 -t ANSIUTF8 "$url"
-qrencode -s 50 -o qr.png "$url"
 
 exit 0

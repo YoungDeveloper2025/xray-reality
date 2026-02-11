@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install -y jq openssl qrencode
 
-curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/default.json > config.json
+curl -s https://raw.githubusercontent.com/YoungDeveloper2025/xray-reality/master/default.json > config.json
 
 # Extract the desired variables using jq
 name=$(jq -r '.name' config.json)
@@ -15,7 +15,7 @@ path=$(jq -r '.path' config.json)
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version v1.8.23
 
-json=$(curl -s https://raw.githubusercontent.com/sajjaddg/xray-reality/master/config.json)
+json=$(curl -s https://raw.githubusercontent.com/YoungDeveloper2025/xray-reality/master/config.json)
 
 keys=$(xray x25519)
 pk=$(echo "$keys" | awk '/Private key:/ {print $3}')
@@ -24,7 +24,7 @@ serverIp=$(curl -s ipv4.wtfismyip.com/text)
 uuid=$(xray uuid)
 shortId=$(openssl rand -hex 8)
 
-url="vless://$uuid@$serverIp:$port?type=http&security=reality&encryption=none&pbk=$pub&fp=chrome&path=$path&sni=$sni&sid=$shortId#$name"
+url="vless://$uuid@$serverIp:$port?type=xhttp&security=reality&encryption=none&pbk=$pub&fp=chrome&path=$path&sni=$sni&sid=$shortId#$name"
 
 newJson=$(echo "$json" | jq \
     --arg pk "$pk" \

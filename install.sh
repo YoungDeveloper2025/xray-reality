@@ -44,6 +44,14 @@ newJson=$(echo "$json" | jq \
 echo "$newJson" | sudo tee /usr/local/etc/xray/config.json >/dev/null
 sudo systemctl restart xray
 
+echo ""
+
+echo "=============================="
+echo " VLESS XHTTP REALITY CONFIG"
+echo "=============================="
+
+echo ""
+
 echo "$url"
 
 echo ""
@@ -51,5 +59,7 @@ echo ""
 qrencode -s 120 -t ANSIUTF8 "$url"
 echo ""
 qrencode -s 50 -o qr.png "$url"
+
+echo ""
 
 exit 0

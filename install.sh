@@ -46,7 +46,10 @@ sudo systemctl restart xray
 
 echo "$url"
 
+echo ""
+
 qrencode -s 120 -t ANSIUTF8 "$url"
+echo ""
 qrencode -s 50 -o qr.png "$url"
 
 exit 0
